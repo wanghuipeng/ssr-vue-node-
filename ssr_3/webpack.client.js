@@ -14,23 +14,10 @@ module.exports = {
     module:{
         rules:[
             {
-                test:/\.js$/,
-                use:{
-                    loader:'babel-loader',
-                    options:{
-                        presets:[
-                            ['@babel/preset-env',{
-                                targets:{
-                                    browsers:['> 1%', 'last 2 versions']
-                                }
-                            }]
-                        ]
-                    }
-                }
-            },
-            {
                 test:/\.vue$/,
-                use:['vue-loader']
+                use:{
+                    loader:'vue-loader'
+                }
             }
         ]
     },
@@ -42,9 +29,5 @@ module.exports = {
     plugins:[
         new VueLoaderPlugin(),
         new VueSSRClientPlugin()
-    ],
-    // devServer:{
-    //     port:5000,
-    //     historyApiFallback: true
-    // }
+    ]
 }

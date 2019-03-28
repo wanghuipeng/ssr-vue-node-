@@ -1,7 +1,6 @@
 const path = require('path');
+const nodeExternal = require('webpack-node-externals');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
-const nodeExternals = require('webpack-node-externals');
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
 
 module.exports = {
@@ -9,32 +8,22 @@ module.exports = {
         main:'./entry-server.js'
     },
     output:{
+        // path:path.resolve(__dirname, './dist'),
         filename:'build.js',
         libraryTarget: 'commonjs2'
     },
     target:'node',
-    devtool:'source-map',
-    externals:nodeExternals({
+    devtool:'#source-map',
+    externals:nodeExternal({
         whitelist: /\.css$/
     }),
     module:{
         rules:[
-            // {
-            //     test:/\.js$/,
-            //     use:{
-            //         loader:'babel-loader',
-            //         options:{
-            //             presets:['@babel/preset-env', {
-            //                 targets:{
-            //                     browsers:['> 1%', 'last 2 versions']
-            //                 }
-            //             }]
-            //         }
-            //     }
-            // },
             {
                 test:/\.vue$/,
-                use:['vue-loader']
+                use:{
+                    loader:'vue-loader'
+                }
             }
         ]
     },

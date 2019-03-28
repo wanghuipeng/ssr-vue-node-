@@ -5,7 +5,8 @@
 //     return app;
 // }
 
-import { createApp } from './app.js'
+
+import { createApp } from './app.js';
 
 export default context => {
   const { app } = createApp()

@@ -11,6 +11,12 @@
   "author": "YSP",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/runtime": "^7.4.2",
+    "babel-loader": "^8.0.5",
     "koa": "^2.7.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
